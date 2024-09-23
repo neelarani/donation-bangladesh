@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <!-- DaisyUI CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-mono p-10 space-y-4">
+  <button class="btn bg-orange-500 hover:bg-orange-600 font-bold text-4xl"><a href="index.html">Go to Main
+      Page</a></button>
+
+  <h3 class="font-bold text-3xl">Wellcome to QA part</h3>
+  <div class="collapse collapse-arrow bg-base-200">
+    <input type="radio" name="my-accordion-2" checked="checked" />
+    <div class="collapse-title text-2xl font-bold">What is the Document Object Model (DOM)?</div>
+    <div class="collapse-content">
+      <p class="font-normal text-lg">The Document Object Model(DOM) is a programming interface for HTML or XML document.
+        It
+        represents each element
+        like tags, attributes, and text as an object, enabling easy interaction and control. <br> <br>
+        With the DOM, you can use javascript to add. remove, modify, or update elements, facilitating interactivity and
+        dynamic content on web pages.
+      </p>
+    </div>
+  </div>
+  <div class="collapse collapse-arrow bg-base-200">
+    <input type="radio" name="my-accordion-2" />
+    <div class="collapse-title text-2xl font-bold">How do you select an element from the DOM?</div>
+    <div class="collapse-content space-y-5">
+      <p class="font-normal text-lg">getElementById: used to select an element with a specific ID. <br>
+        Example: const element = document.getElementById('elementId');
+      </p>
+
+      <p>getElementsByClassName: used to select all element with a specific class name. <br>
+        Example: const element = document.getElementsByClassName('className');
+      </p>
+      <p>getElementsByTagName: used to select all element with a specific tag name. <br>
+        Example: const element = document.getElementsByClassName('tagName');
+      </p>
+
+      <p>querySelector: used to select the first element that matches a css selector. <br>
+        Example: const element = document.querySelector('.className');
+      </p>
+
+      <p>querySelectorAll: used to select all element that matches a css selector. <br>
+        Example: const element = document.querySelectorAll('div');
+      </p>
+
+    </div>
+  </div>
+
+  <div class="collapse collapse-arrow bg-base-200">
+    <input type="radio" name="my-accordion-2" />
+    <div class="collapse-title text-2xl font-bold">What is event delegation in the context of the DOM, and why is it
+      useful?</div>
+    <div class="collapse-content">
+      <p class="text-lg font-normal">Event delegation is a method where an event listener is added to a parent element,
+        which can capture events form child element.
+      </p><br>
+      <h2>Benefits:</h2>
+
+      <li>One listener can manage events for many child elements.</li>
+      <li>No need for separate listeners when new elements are added.</li>
+      <li>Fewer listeners improve performance.</li>
+    </div>
+  </div>
+
+  <div class="collapse collapse-arrow bg-base-200">
+    <input type="radio" name="my-accordion-2" />
+    <div class="collapse-title text-2xl font-bold">How do you manipulate an element's attributes and styles using the
+      DOM?</div>
+    <div class="collapse-content space-y-3">
+      <p class="font-normal text-lg">
+      <ul>
+        <li>1. setAttribute : to set a new value.</li>
+        <li>2. getAttribute : to get the value of an attribute.</li>
+        <li>3. removeAttribute : to remove an attribute.</li>
+      </ul>
+
+
+      <ul>
+        <p>Changing Styles :</p>
+        <li>1. style property : to set css styles directly.</li>
+        <li>2. classList : to add or remove classes.</li>
+      </ul>
+      </p>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
