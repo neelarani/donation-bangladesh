@@ -36,3 +36,6 @@ function donationButtons(buttonId, inputFieldId, balanceId) {
 donationButtons('donate-btn-1', 'input-field-1', 'balance-1');
 donationButtons('donate-btn-2', 'input-field-2', 'balance-2');
 donationButtons('donate-btn-3', 'input-field-3', 'balance-3');
+
+// **********
+const donationButton = document.getElementById('donation-button');

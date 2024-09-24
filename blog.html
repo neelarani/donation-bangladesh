@@ -5,93 +5,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog</title>
+
   <!-- DaisyUI CDN -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="font-mono p-10 space-y-4">
-  <button class="btn bg-orange-500 hover:bg-orange-600 font-bold text-4xl"><a href="index.html">Go to Main
-      Page</a></button>
+<body class="font-mono">
+  <header class="sticky top-0 bg-primary">
+    <nav class="bg-[#F9F7F3]">
+      <div class="flex justify-between items-center w-11/12 py-8  h-24 mx-auto">
+        <p class="bg-[#B4F461] px-8 py-4 rounded-lg font-semibold"><a href="index.html">Blog</a></p>
+        <p class="flex items-center font-semibold text-lg gap-4">
+          <img class="border-2 border-dashed" src="assets/logo.png" alt="">
+          Donate Bangladesh
+        </p>
+        <p class="flex items-center font-medium gap-2">
+          <img class="border-2 border-dashed" src="assets/coin.png" alt="">
+          <span id="donate-money">5500</span>
+          <span>BDT</span>
+        </p>
+      </div>
+    </nav>
+  </header>
 
-  <h3 class="font-bold text-3xl">Wellcome to QA part</h3>
-  <div class="collapse collapse-arrow bg-base-200">
-    <input type="radio" name="my-accordion-2" checked="checked" />
-    <div class="collapse-title text-2xl font-bold">What is the Document Object Model (DOM)?</div>
-    <div class="collapse-content">
-      <p class="font-normal text-lg">The Document Object Model(DOM) is a programming interface for HTML or XML document.
-        It
-        represents each element
-        like tags, attributes, and text as an object, enabling easy interaction and control. <br> <br>
-        With the DOM, you can use javascript to add. remove, modify, or update elements, facilitating interactivity and
-        dynamic content on web pages.
-      </p>
+  <div class="mt-20">
+    <h3 class="font-bold text-3xl py-8">Important FQA</h3>
+    <div class="collapse collapse-arrow bg-base-200 space-y-3  ">
+
+      <input type="radio" name="my-accordion-2" checked="checked" />
+      <div class="collapse-title text-2xl font-bold">What is the Document Object Model (DOM)?</div>
+      <div class="collapse-content">
+        <p class="font-normal text-lg">The Document Object Model(DOM) is a programming interface for HTML or XML
+          document.
+          It
+          represents each element
+          like tags, attributes, and text as an object, enabling easy interaction and control. <br> <br>
+          With the DOM, you can use javascript to add. remove, modify, or update elements, facilitating interactivity
+          and
+          dynamic content on web pages.
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="collapse collapse-arrow bg-base-200">
-    <input type="radio" name="my-accordion-2" />
-    <div class="collapse-title text-2xl font-bold">How do you select an element from the DOM?</div>
-    <div class="collapse-content space-y-5">
-      <p class="font-normal text-lg">getElementById: used to select an element with a specific ID. <br>
-        Example: const element = document.getElementById('elementId');
-      </p>
+    <div class="collapse collapse-arrow bg-base-200">
+      <input type="radio" name="my-accordion-2" />
+      <div class="collapse-title text-2xl font-bold">How do you select an element from the DOM?</div>
+      <div class="collapse-content space-y-5">
+        <p class="font-normal text-lg">getElementById: used to select an element with a specific ID. <br>
+          Example: const element = document.getElementById('elementId');
+        </p>
 
-      <p>getElementsByClassName: used to select all element with a specific class name. <br>
-        Example: const element = document.getElementsByClassName('className');
-      </p>
-      <p>getElementsByTagName: used to select all element with a specific tag name. <br>
-        Example: const element = document.getElementsByClassName('tagName');
-      </p>
+        <p>getElementsByClassName: used to select all element with a specific class name. <br>
+          Example: const element = document.getElementsByClassName('className');
+        </p>
+        <p>getElementsByTagName: used to select all element with a specific tag name. <br>
+          Example: const element = document.getElementsByClassName('tagName');
+        </p>
 
-      <p>querySelector: used to select the first element that matches a css selector. <br>
-        Example: const element = document.querySelector('.className');
-      </p>
+        <p>querySelector: used to select the first element that matches a css selector. <br>
+          Example: const element = document.querySelector('.className');
+        </p>
 
-      <p>querySelectorAll: used to select all element that matches a css selector. <br>
-        Example: const element = document.querySelectorAll('div');
-      </p>
+        <p>querySelectorAll: used to select all element that matches a css selector. <br>
+          Example: const element = document.querySelectorAll('div');
+        </p>
 
+      </div>
     </div>
-  </div>
 
-  <div class="collapse collapse-arrow bg-base-200">
-    <input type="radio" name="my-accordion-2" />
-    <div class="collapse-title text-2xl font-bold">What is event delegation in the context of the DOM, and why is it
-      useful?</div>
-    <div class="collapse-content">
-      <p class="text-lg font-normal">Event delegation is a method where an event listener is added to a parent element,
-        which can capture events form child element.
-      </p><br>
-      <h2>Benefits:</h2>
+    <div class="collapse collapse-arrow bg-base-200">
+      <input type="radio" name="my-accordion-2" />
+      <div class="collapse-title text-2xl font-bold">What is event delegation in the context of the DOM, and why is it
+        useful?</div>
+      <div class="collapse-content">
+        <p class="text-lg font-normal">Event delegation is a method where an event listener is added to a parent
+          element,
+          which can capture events form child element.
+        </p><br>
+        <h2>Benefits:</h2>
 
-      <li>One listener can manage events for many child elements.</li>
-      <li>No need for separate listeners when new elements are added.</li>
-      <li>Fewer listeners improve performance.</li>
+        <li>One listener can manage events for many child elements.</li>
+        <li>No need for separate listeners when new elements are added.</li>
+        <li>Fewer listeners improve performance.</li>
+      </div>
     </div>
-  </div>
 
-  <div class="collapse collapse-arrow bg-base-200">
-    <input type="radio" name="my-accordion-2" />
-    <div class="collapse-title text-2xl font-bold">How do you manipulate an element's attributes and styles using the
-      DOM?</div>
-    <div class="collapse-content space-y-3">
-      <p class="font-normal text-lg">
-      <ul>
-        <li>1. setAttribute : to set a new value.</li>
-        <li>2. getAttribute : to get the value of an attribute.</li>
-        <li>3. removeAttribute : to remove an attribute.</li>
-      </ul>
+    <div class="collapse collapse-arrow bg-base-200">
+      <input type="radio" name="my-accordion-2" />
+      <div class="collapse-title text-2xl font-bold">How do you manipulate an element's attributes and styles using the
+        DOM?</div>
+      <div class="collapse-content space-y-3">
+        <p class="font-normal text-lg">
+        <ul>
+          <li>1. setAttribute : to set a new value.</li>
+          <li>2. getAttribute : to get the value of an attribute.</li>
+          <li>3. removeAttribute : to remove an attribute.</li>
+        </ul>
 
 
-      <ul>
-        <p>Changing Styles :</p>
-        <li>1. style property : to set css styles directly.</li>
-        <li>2. classList : to add or remove classes.</li>
-      </ul>
-      </p>
+        <ul>
+          <p>Changing Styles :</p>
+          <li>1. style property : to set css styles directly.</li>
+          <li>2. classList : to add or remove classes.</li>
+        </ul>
+        </p>
+      </div>
     </div>
-  </div>
 
+  </div>
 
 </body>
 
