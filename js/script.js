@@ -1,32 +1,3 @@
-// function toggleHistory() {
-//   const mainContent = document.getElementById('main-content');
-//   const donationData = document.getElementById('donation-data');
-//   if (donationData.classList.contains('hidden')) {
-//     donationData.classList.remove('hidden');
-//     mainContent.classList.add('hidden');
-//   } else {
-//     donationData.classList.add('hidden');
-//     mainContent.classList.remove('hidden');
-//   }
-// }
-
-// function addDonation(donationId, inputAmount) {
-//   const donatationData = document.getElementById('donation-data');
-
-//   const createElement = document.createElement('div');
-//   const donateLocation = document.getElementById(donationId).innerText;
-
-//   createElement.className = 'border-2 shadow-sm p-9 space-y-4 rounded-lg';
-//   createElement.innerHTML = `
-//     <h3>${donateLocation}</h3>
-//         <p class="text-lg font-medium text-text ">${inputAmount}<span class="pl-2">BDT</span> </p>
-//         <p class="text-lg font-medium text-text">${new Date().toLocaleDateString()}</p>
-//   `;
-//   donatationData.appendChild(createElement);
-
-//   toggleHistory();
-// }
-
 function donationButtons(buttonId, inputFieldId, balanceId) {
   document.getElementById(buttonId).addEventListener('click', function () {
     const inputAmount = parseFloat(document.getElementById(inputFieldId).value);
@@ -60,9 +31,21 @@ function donationButtons(buttonId, inputFieldId, balanceId) {
     const modal = document.getElementById('my_modal_1');
     modal.showModal();
 
-    // addDonation('donate-noakhali', inputAmount);
-    // addDonation('donate-feni', inputAmount);
-    // addDonation('donate-protest', inputAmount);
+    // history section
+    const donateNoakhali = document.getElementById('donate-noakhali').innerText;
+    console.log(donateNoakhali);
+
+    const div = document.createElement('div');
+    div.classList.add('bg-red-300');
+    div.innerHTML = `
+    <h2 class="text-text font-bold text-lg">${donateNoakhali}</h2>
+    <p>${inputAmount} BDT</p>
+    <p>${new Date().toLocaleDateString()}</p>
+    `;
+
+    document.getElementById('donation-history-data').appendChild(div);
+
+    document.getElementById('donation-data').classList.remove('hidden');
   });
 }
 
