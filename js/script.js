@@ -66,14 +66,15 @@ function donationButtons(buttonId, inputFieldId, balanceId, donateAreaId) {
       let monthName = Months[now.getMonth()];
       let dayName = weeks[now.getDay()];
       let yearName = now.getFullYear();
+      let time = now.toLocaleTimeString();
 
       // let formattedTime = now.toLocaleDateString();
 
       div.innerHTML = `
       <div class="rounded-lg p-4 my-3 space-y-3 bg-[#F9F7F3]">
-      <h3>${donationArea} </h3>
-      <p>${inputAmount} BDT</p>
-      <p>${dayName}, ${monthName} ${yearName}</p>
+      ${inputAmount} Taka is Donated for famine- ${donationArea}
+  
+      <p>${dayName}, ${monthName} ${yearName} Time: ${time} (Bangladesh Standard Time)</p>
       </div> `;
 
       info.appendChild(div);
