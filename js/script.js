@@ -6,7 +6,6 @@ function donationButtons(buttonId, inputFieldId, balanceId, donateAreaId) {
       alert('Please enter a valid donation amount.');
       return;
     }
-
     let donateMoney = parseFloat(
       document.getElementById('donate-money').innerText
     );
@@ -71,10 +70,10 @@ function donationButtons(buttonId, inputFieldId, balanceId, donateAreaId) {
       // let formattedTime = now.toLocaleDateString();
 
       div.innerHTML = `
-      <div class="rounded-lg p-4 my-3 space-y-3 bg-[#F9F7F3]">
+      <div class="rounded-lg text-xl border-2 p-8 my-3 space-y-3 bg-[#F9F7F3]">
       ${inputAmount} Taka is Donated for famine- ${donationArea}
   
-      <p>${dayName}, ${monthName} ${yearName} Time: ${time} (Bangladesh Standard Time)</p>
+      <p class="text-sm font-medium">${dayName}, ${monthName} ${yearName} Time: ${time} (Bangladesh Standard Time)</p>
       </div> `;
 
       info.appendChild(div);
