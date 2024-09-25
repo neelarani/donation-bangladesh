@@ -1,8 +1,10 @@
 function donationButtons(buttonId, inputFieldId, balanceId, donateAreaId) {
   document.getElementById(buttonId).addEventListener('click', function () {
-    let inputAmount = parseFloat(document.getElementById(inputFieldId).value);
+    let inputCount = document.getElementById(inputFieldId).value;
 
-    if (isNaN(inputAmount) || inputAmount <= 0) {
+    let inputValue = parseFloat(inputCount);
+
+    if (!isNaN(inputCount) === false || inputValue <= 0) {
       alert('Please enter a valid donation amount.');
       return;
     }
@@ -10,7 +12,7 @@ function donationButtons(buttonId, inputFieldId, balanceId, donateAreaId) {
       document.getElementById('donate-money').innerText
     );
 
-    if (inputAmount > donateMoney) {
+    if (inputValue > donateMoney) {
       alert('The donation amount is more than the balance.');
       const modal = document.getElementById('my_modal_1');
       modal.close();
@@ -21,10 +23,10 @@ function donationButtons(buttonId, inputFieldId, balanceId, donateAreaId) {
       document.getElementById(balanceId).innerText
     );
     document.getElementById(balanceId).innerText = `${
-      currentBalance + inputAmount
+      currentBalance + inputValue
     }`;
 
-    let newDonateMoney = donateMoney - inputAmount;
+    let newDonateMoney = donateMoney - inputValue;
     document.getElementById('donate-money').innerText = newDonateMoney;
 
     let modal = document.getElementById('my_modal_1');
@@ -71,7 +73,7 @@ function donationButtons(buttonId, inputFieldId, balanceId, donateAreaId) {
 
       div.innerHTML = `
       <div class="rounded-lg text-xl border-2 p-8 my-3 space-y-3 bg-[#F9F7F3]">
-      ${inputAmount} Taka is Donated for famine- ${donationArea}
+      ${inputValue} Taka is Donated for famine- ${donationArea}
   
       <p class="text-sm font-medium">${dayName}, ${monthName} ${yearName} Time: ${time} (Bangladesh Standard Time)</p>
       </div> `;
