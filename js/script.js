@@ -65,14 +65,15 @@ function donationButtons(buttonId, inputFieldId, balanceId, donateAreaId) {
       let now = new Date();
       let monthName = Months[now.getMonth()];
       let dayName = weeks[now.getDay()];
-      let day = now.getDay();
-      let formattedTime = now.toLocaleDateString();
+      let yearName = now.getFullYear();
+
+      // let formattedTime = now.toLocaleDateString();
 
       div.innerHTML = `
       <div class="rounded-lg p-4 my-3 space-y-3 bg-[#F9F7F3]">
       <h3>${donationArea} </h3>
       <p>${inputAmount} BDT</p>
-      <p>${dayName}, ${monthName} ${day}, ${formattedTime}</p>
+      <p>${dayName}, ${monthName} ${yearName}</p>
       </div> `;
 
       info.appendChild(div);
