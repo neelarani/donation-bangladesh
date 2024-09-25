@@ -1,13 +1,13 @@
-function donationButtons(buttonId, inputFieldId, balanceId) {
+function donationButtons(buttonId, inputFieldId, balanceId, donateAreaId) {
   document.getElementById(buttonId).addEventListener('click', function () {
-    const inputAmount = parseFloat(document.getElementById(inputFieldId).value);
+    let inputAmount = parseFloat(document.getElementById(inputFieldId).value);
 
     if (isNaN(inputAmount) || inputAmount <= 0) {
       alert('Please enter a valid donation amount.');
       return;
     }
 
-    const donateMoney = parseFloat(
+    let donateMoney = parseFloat(
       document.getElementById('donate-money').innerText
     );
 
@@ -18,45 +18,82 @@ function donationButtons(buttonId, inputFieldId, balanceId) {
       return;
     }
 
-    const currentBalance = parseFloat(
+    let currentBalance = parseFloat(
       document.getElementById(balanceId).innerText
     );
     document.getElementById(balanceId).innerText = `${
       currentBalance + inputAmount
     }`;
 
-    const newDonateMoney = donateMoney - inputAmount;
+    let newDonateMoney = donateMoney - inputAmount;
     document.getElementById('donate-money').innerText = newDonateMoney;
 
-    const modal = document.getElementById('my_modal_1');
+    let modal = document.getElementById('my_modal_1');
     modal.showModal();
 
     // history section
-    const donateNoakhali = document.getElementById('donate-noakhali').innerText;
-    console.log(donateNoakhali);
+    function updateHistory() {
+      let donationArea = document.getElementById(donateAreaId).innerText;
+      let div = document.createElement('div');
+      let info = document.getElementById('donation-data');
 
-    const div = document.createElement('div');
-    div.classList.add('bg-red-300');
-    div.innerHTML = `
-    <h2 class="text-text font-bold text-lg">${donateNoakhali}</h2>
-    <p>${inputAmount} BDT</p>
-    <p>${new Date().toLocaleDateString()}</p>
-    `;
+      let Months = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ];
 
-    document.getElementById('donation-history-data').appendChild(div);
+      let weeks = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+      ];
 
-    document.getElementById('donation-data').classList.remove('hidden');
+      let now = new Date();
+      let monthName = Months[now.getMonth()];
+      let dayName = weeks[now.getDay()];
+      let day = now.getDay();
+      let formattedTime = now.toLocaleDateString();
+
+      div.innerHTML = `
+      <div class="rounded-lg p-4 my-3 space-y-3 bg-[#F9F7F3]">
+      <h3>${donationArea} </h3>
+      <p>${inputAmount} BDT</p>
+      <p>${new Date().toLocaleDateString()}</p>
+      </div> `;
+
+      info.appendChild(div);
+    }
+    updateHistory();
   });
 }
 
-donationButtons('donate-btn-1', 'input-field-1', 'balance-1');
-donationButtons('donate-btn-2', 'input-field-2', 'balance-2');
-donationButtons('donate-btn-3', 'input-field-3', 'balance-3');
+donationButtons(
+  'donate-btn-1',
+  'input-field-1',
+  'balance-1',
+  'donate-noakhali'
+);
+donationButtons('donate-btn-2', 'input-field-2', 'balance-2', 'donate-feni');
+donationButtons('donate-btn-3', 'input-field-3', 'balance-3', 'donate-protest');
 
 // Donation and history buttons handle function
 const donationBtn = document.getElementById('donation-button');
 const historyButton = document.getElementById('history-button');
-const mainContent = document.getElementById('main-content');
+const mainContent = document.getElementById('donat-items');
 const donationData = document.getElementById('donation-data');
 
 function showDonation() {
@@ -80,7 +117,7 @@ function showHistory() {
   donationBtn.classList.add('bg-gray-300');
   historyButton.classList.remove('bg-gray-300');
 }
-donationBtn.classList.add('bg-secondary');
+// donationBtn.classList.add('bg-secondary');
 
 donationBtn.addEventListener('click', showDonation);
 historyButton.addEventListener('click', showHistory);
