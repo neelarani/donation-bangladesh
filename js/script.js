@@ -4,7 +4,12 @@ function donationButtons(buttonId, inputFieldId, balanceId, donateAreaId) {
 
     let inputValue = parseFloat(inputCount);
 
-    if (!isNaN(inputCount) === false || inputValue <= 0) {
+    if (
+      !isNaN(inputCount) === '' ||
+      !isNaN(inputCount) === false ||
+      !inputCount ||
+      inputValue <= 0
+    ) {
       alert('Please enter a valid donation amount.');
       return;
     }
