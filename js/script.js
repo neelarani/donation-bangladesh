@@ -72,7 +72,7 @@ function donationButtons(buttonId, inputFieldId, balanceId, donateAreaId) {
       <div class="rounded-lg p-4 my-3 space-y-3 bg-[#F9F7F3]">
       <h3>${donationArea} </h3>
       <p>${inputAmount} BDT</p>
-      <p>${new Date().toLocaleDateString()}</p>
+      <p>${dayName}, ${monthName} ${day}, ${formattedTime}</p>
       </div> `;
 
       info.appendChild(div);
